@@ -85,7 +85,7 @@ func (s *MetaData) MarshalJSON() ([]byte, error) {
 }
 func (s *MetaData) UnmarshalJSON(data []byte) error {
 	dataUnmarshal := make(map[string]string)
-	err := json.Unmarshal(data, dataUnmarshal)
+	err := json.Unmarshal(data, &dataUnmarshal)
 	s.Map = dataUnmarshal
 	if val, ok := s.Map["@class"]; ok {
 		s.Class = val
